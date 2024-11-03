@@ -1,4 +1,4 @@
-# costumer-service
+# customer-service
 
 Launch :
 
