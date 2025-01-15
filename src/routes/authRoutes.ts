@@ -3,7 +3,7 @@ import {
     registerUser,
     loginUser,
     verifyUser,
-} from '../controllers/authControllers';
+} from '../controllers/authController';
 
 const router = Router();
 
@@ -21,6 +21,5 @@ router.post('/login', (req, res) => {
 router.get('/verify/:email/:token', (req, res) => {
     verifyUser(req, res);
 });
-
 
 export default router;
