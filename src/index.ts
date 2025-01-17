@@ -4,6 +4,7 @@ import cors from "cors";
 import { mongooseConnect } from "./middleware/DBMiddleware";
 import cookieParser from "cookie-parser";
 import AuthRoutes from "./routes/authRoutes";
+import UserRoutes from "./routes/userRoutes";
 
 let corsOptions = {};
 
@@ -24,3 +25,4 @@ app.listen(port, () => {
 });
 
 app.use('/api/v1/auth', AuthRoutes);
+app.use('/api/v1/user', UserRoutes);
