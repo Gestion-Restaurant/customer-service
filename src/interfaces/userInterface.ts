@@ -7,6 +7,10 @@ interface IUser extends Document {
     role: 'client' | 'chef' | 'delivery';
     sessionToken: string;
     verified: boolean;
+    address?: string;
+    description?: string;
+    openingTime?: string;
+    closingTime?: string;
 }
 
 export default IUser;

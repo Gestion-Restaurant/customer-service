@@ -6,6 +6,7 @@ const DishSchema: Schema = new Schema({
     description: { type: String },
     price: { type: Number, required: true },
     isAvailable: { type: Boolean, default: true },
+    restaurantId: { type: String, required: true },
 });
 
 export default mongoose.model<IDish>('Dish', DishSchema);

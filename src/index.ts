@@ -1,9 +1,10 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { mongooseConnect } from "./middleware/DBMiddleware";
 import cookieParser from "cookie-parser";
-import AuthRoutes from "./routes/authRoutes";
+import UserRoutes from "./routes/user.routes";
+import AuthRoutes from "./routes/auth.routes";
 
 let corsOptions = {};
 
@@ -23,4 +24,5 @@ app.listen(port, () => {
   console.log(`⚡️ [server]: Server is running at http://localhost:${port}`);
 });
 
-app.use('/api/v1/auth', AuthRoutes);
+app.use('/auth', AuthRoutes);
+app.use('/users', UserRoutes);

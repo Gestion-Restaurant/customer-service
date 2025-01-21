@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { sendVerificationEmail } from '../services/emailService';
 import { CONSTANTS } from '../utils/constants';
 import UserSchema from '../models/userSchema';
 import IUser from '../interfaces/userInterface';
@@ -77,10 +76,10 @@ export const loginUser = async (req: Request, res: Response): Promise<Response> 
 
         // Generate token with user id and email
         const token = jwt.sign(
-            { 
+            {
                 id: user._id,
                 email: user.email,
-                role: user.role 
+                role: user.role
             },
             process.env.JWT_SECRET ?? '',
             { expiresIn: CONSTANTS.JWT_EXPIRY }
