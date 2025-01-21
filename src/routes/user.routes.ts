@@ -3,7 +3,7 @@ import {
     getCustomers,
     getCustomersByRole,
     getCustomerById,
-} from '../controllers/userController';
+} from '../controllers/user.controller';
 
 const router = Router();
 

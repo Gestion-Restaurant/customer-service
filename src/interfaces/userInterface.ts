@@ -1,4 +1,4 @@
-import { Document, Types } from 'mongoose';
+import { Document } from 'mongoose';
 
 interface IUser extends Document {
     name: string;
@@ -7,6 +7,10 @@ interface IUser extends Document {
     role: 'client' | 'chef' | 'delivery';
     sessionToken: string;
     verified: boolean;
+    address?: string;
+    description?: string;
+    openingTime?: string;
+    closingTime?: string;
 }
 
 export default IUser;

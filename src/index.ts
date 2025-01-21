@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { mongooseConnect } from "./middleware/DBMiddleware";
 import cookieParser from "cookie-parser";
-import UserRoutes from "./routes/userRoutes";
-import AuthRoutes from "./routes/authRoutes";
+import UserRoutes from "./routes/user.routes";
+import AuthRoutes from "./routes/auth.routes";
 
 let corsOptions = {};
 
