@@ -20,6 +20,7 @@ export const registerUser = async (req: Request, res: Response): Promise<Respons
         if (existingUser) {
             return res.status(400).json({ error: 'User already exists' });
         }
+        console.log(req.body)
 
         const token = jwt.sign(
             { name, email, role },
