@@ -9,7 +9,7 @@ import bcrypt from 'bcrypt';
 // Register Controller
 export const registerUser = async (req: Request, res: Response): Promise<Response> => {
     try {
-        const { name, email, password, role }: IUser = req.body;
+        const { name, email, password, role, description, address, openingTime, closingTime }: IUser = req.body;
 
         if (!name || !email || !password || !role) {
             return res.status(400).json({ error: 'Missing required fields' });
@@ -37,7 +37,11 @@ export const registerUser = async (req: Request, res: Response): Promise<Respons
             password: hashedPassword, // Note: You should hash this password before saving
             role,
             sessionToken: token,
-            verified: false
+            verified: false,
+            address,
+            description,
+            openingTime,
+            closingTime
         });
 
         try {
