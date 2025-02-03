@@ -19,11 +19,11 @@ router.get('/:role', (req, res) => {
 });
 
 // Get user by ID
-router.get('/:id', (req, res) => {
+router.get('/byId/:id', (req, res) => {
     getCustomerById(req, res);
 });
 
-router.put('/:id', (req, res) => {
+router.put('/byId/:id', (req, res) => {
     updateCustomer(req, res);
 });
 
